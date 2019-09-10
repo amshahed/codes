@@ -10,7 +10,7 @@ int main(){
     while(m--){
         cin>>a>>b>>k;
         arr[a] += k;
-        if (arr[b+1] <= n)    arr[b+1] -=k;
+        if (b+1 <= n)    arr[b+1] -= k;
     }
     for (int i=0; i<=n; i++){
         x += arr[i];
