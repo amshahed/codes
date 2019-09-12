@@ -1,0 +1,62 @@
+dfs.txt
+Type
+Text
+Size
+860 bytes
+Storage used
+860 bytes
+Location
+Codes
+Owner
+me
+Modified
+Aug 15, 2016 by me
+Opened
+Jan 20, 2019 by me
+Created
+Aug 15, 2016 with Google Drive Web
+Add a description
+Viewers can download
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector <int> graph[100000];
+int visited[100000];
+int dis[100000];
+int fin[100000];
+int parent[100000];
+
+dfs(int s, int tm){
+    visited[s]=0;
+    tm+=1;
+    dis[s]=tm;
+    for (int i=0; i<graph[s].size(); i++){
+        int v=graph[s][i];
+        if (visited[v]==-1){
+            parent[v]=s;
+            tm=dfs(v,tm);
+        }
+    }
+    visited[s]=1;
+    tm+=1;
+    fin[s]=tm;
+    return tm;
+}
+
+int main()
+{
+    memset(visited, -1, 100000);
+    int i,j,n,m,x,y,tm=0;
+    cin>>n>>m;
+    for (i=0; i<m; i++){
+        cin>>x>>y;
+        graph[x].push_back(y);
+        graph[y].push_back(x);
+    }
+    for (i=1; i<=n; i++){
+        if (visited[i]==-1) j=dfs(i,tm);
+    }
+    for (i=1; i<=n; i++)
+        cout<< "node "<<i<< ": start: "<<dis[i]<< " & end: "<<fin[i]<<endl;
+}
