@@ -205,7 +205,7 @@ WorkManager.getInstance(this).getWorkInfoByIdLiveData(oneTimeWorkRequest.getId()
         });
 ```
 
-![One Time Work Info](https://i.imgur.com/xK6voX3.jpg?1)
+![One Time Work Info](https://i.imgur.com/xK6voX3.jpg?2)
 
 এভাবেই যে কোন ব্যাকগ্রাউন্ড টাস্ক WorkManager দিয়ে করতে পারি।
 
