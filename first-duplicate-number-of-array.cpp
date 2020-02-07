@@ -1,6 +1,7 @@
 // google interview qs
 // given an array where numbers between 1 and the length of that array can exist
 // find the first repeating number of the array, if not found return -1
+// time - O(n), space - O(1)
 
 #include <bits/stdc++.h>
 using namespace std;
